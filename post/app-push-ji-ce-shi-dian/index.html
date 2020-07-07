@@ -1,22 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://zhaiworld.github.io/</id>
-    <title>zhaiworld</title>
-    <updated>2020-07-07T01:29:37.234Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://zhaiworld.github.io/"/>
-    <link rel="self" href="https://zhaiworld.github.io/atom.xml"/>
-    <subtitle>有策</subtitle>
-    <logo>https://zhaiworld.github.io/images/avatar.png</logo>
-    <icon>https://zhaiworld.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, zhaiworld</rights>
-    <entry>
-        <title type="html"><![CDATA[APP Push及测试点]]></title>
-        <id>https://zhaiworld.github.io/post/app-push-ji-ce-shi-dian/</id>
-        <link href="https://zhaiworld.github.io/post/app-push-ji-ce-shi-dian/">
-        </link>
-        <updated>2020-07-06T12:37:46.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="简介">简介</h3>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>APP Push及测试点 | zhaiworld</title>
+<link rel="shortcut icon" href="https://zhaiworld.github.io//favicon.ico?v=1594085373200">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://zhaiworld.github.io//styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            zhaiworld
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    APP Push及测试点
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-07-06 ·
+                    </time>
+                    
+                        <a href="https://zhaiworld.github.io/tag/wXqUqK_3d/" class="post-tags">
+                            # APP
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h3 id="简介">简介</h3>
 <p>消息推送是APP触达用户的优质渠道之一，在App开发中应用的场景是十分常见。</p>
 <h3 id="ios-push-原理">iOS Push 原理</h3>
 <p>iOS应用的推送大部分情况下都要依赖苹果生态提供的APNs（Apple Push Notification Service）服务。<a href="https://www.jianshu.com/p/5d83250fb5a1">扩展阅读：</a></p>
@@ -97,46 +181,83 @@ GCM：google的Gcm，容易被国内厂商阉割，而且NAT（Network AddressTr
 <li>多端同时在线：支持多端登录的app，能否在每一端都收到push</li>
 <li>游客与登录状态：有些app支持游客态登录，能否正常收到push</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Liunx]]></title>
-        <id>https://zhaiworld.github.io/post/linux/</id>
-        <link href="https://zhaiworld.github.io/post/linux/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="简介讲解编辑神器vi">简介：讲解编辑神器vi</h3>
-<h4 id="vi的基本概念三种模式">vi的基本概念:（三种模式）</h4>
-<ul>
-<li>命令模式</li>
-<li>插入模式</li>
-<li>底行模式</li>
-</ul>
-<blockquote>
-<p>进入插入模式：按住键盘的 i 或者 o 或者 a<br>
-进入命令模式：按住键盘的左上角esc键<br>
-进入底行模式：前提是得在命令模式，输入 ： 进入</p>
-</blockquote>
-<h5 id="在命令模式中的操作">在命令模式中的操作</h5>
-<p>$ ——&gt;移动到这一行的行尾<br>
-gg ——&gt;移动到文档第一行行首<br>
-G ——&gt;移动到文档最后一行行首<br>
-x ——&gt;删除内容，删除一个字符<br>
-dd ——&gt;删除游标所在的那一整行<br>
-u ——&gt;复原原来的操作<br>
-v ——&gt;选中范围按y即复制<br>
-p ——&gt;粘贴</p>
-<h5 id="在底行模式中的操作">在底行模式中的操作</h5>
-<p>n ——&gt;n为数字。光标移动到第n 行<br>
-/ ——&gt;寻找内容<br>
-%s/word1/word2/g ——&gt;从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2<br>
-n1,n2s/word1/word2/g ——&gt;n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代 为 word2<br>
-set nu ——&gt;显示行号<br>
-set nonu ——&gt;取消行号<br>
-q! ——&gt;强制离开不保存<br>
-wq ——&gt;离开并保存<br>
-wq! ——&gt;强制离开并保存<br>
-!ls ——&gt;暂时离开</p>
-]]></content>
-    </entry>
-</feed>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://zhaiworld.github.io/post/linux/" class="post-title gt-a-link">
+                    Liunx
+                </a>
+            </div>
+        
+
+        
+
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">有策</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/zhaiworld/" target="_blank">有策</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://zhaiworld.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
