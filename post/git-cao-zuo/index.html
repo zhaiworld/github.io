@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>zhaiworld</title>
+<title>GIT操作 | zhaiworld</title>
 <link rel="shortcut icon" href="https://zhaiworld.github.io//favicon.ico?v=1594176000436">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://zhaiworld.github.io//styles/main.css">
@@ -30,11 +30,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -83,19 +83,73 @@
         </div>
     </div>
 </nav>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    GIT操作
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-07-07 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h3 id="分支">分支</h3>
+<p><strong>显示所有分支</strong><br>
+git branch -a<br>
+<strong>切换当前分支</strong><br>
+git checkout <branch><br>
+<strong>创建新分支，基于当前分支</strong><br>
+git branch &lt;new_branch&gt;<br>
+<strong>删除本地分支</strong><br>
+git branch -d <branch></p>
 
-        <div class="tags-container">
-            
-                <a class="tag gt-c-content-color-first gt-a-link"
-                   href="https://zhaiworld.github.io/tag/yM7MMByX9/">#trouble</a>
-            
-                <a class="tag gt-c-content-color-first gt-a-link"
-                   href="https://zhaiworld.github.io/tag/wXqUqK_3d/">#APP</a>
-            
-                <a class="tag gt-c-content-color-first gt-a-link"
-                   href="https://zhaiworld.github.io/tag/iZbG2SoPM/">#liunx</a>
-            
+                </div>
+            </article>
         </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://zhaiworld.github.io/post/app-push-ji-ce-shi-dian/" class="post-title gt-a-link">
+                    APP Push及测试点
+                </a>
+            </div>
+        
+
+        
+
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+        
+
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">有策</div>

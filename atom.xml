@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaiworld.github.io/</id>
     <title>zhaiworld</title>
-    <updated>2020-07-07T01:29:37.234Z</updated>
+    <updated>2020-07-08T02:40:08.426Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaiworld.github.io/"/>
     <link rel="self" href="https://zhaiworld.github.io/atom.xml"/>
@@ -10,6 +10,44 @@
     <logo>https://zhaiworld.github.io/images/avatar.png</logo>
     <icon>https://zhaiworld.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, zhaiworld</rights>
+    <entry>
+        <title type="html"><![CDATA[解决Refused to display 'http://*./*' in a frame问题]]></title>
+        <id>https://zhaiworld.github.io/post/jie-jue-refused-to-display-http-in-a-frame-wen-ti/</id>
+        <link href="https://zhaiworld.github.io/post/jie-jue-refused-to-display-http-in-a-frame-wen-ti/">
+        </link>
+        <updated>2020-07-08T02:22:52.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="问题描述">问题描述：</h3>
+<p>质量管理平台中需要集成另一个系统的报告页面（html，来自Django)，平台集成的方式是通过iframe显示嵌入的页面。但是在加载页面时报错：</p>
+<blockquote>
+<p>Refused to display 'http://xxxx' in a frame because it set 'X-Frame-Options' to 'sameorigin'.</p>
+</blockquote>
+<h3 id="解决办法">解决办法：</h3>
+<p>在Django项目的setting.py中增加如下配置：</p>
+<blockquote>
+<p>X_FRAME_OPTIONS = 'ALLOWALL'<br>
+在网上找到了类似的解决方法：<br>
+X_FRAME_OPTIONS = 'ALLOWALL url'   # url为指定地址</p>
+</blockquote>
+<p>但是经过实验发现，'ALLOWALL'、'ALLOW'、'ALLOWALL 非质量平台的IP地址'，这三种情况都是访问正常的。不理解为什么第三种情况也是OK的，有懂的朋友欢迎留言指点！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GIT操作]]></title>
+        <id>https://zhaiworld.github.io/post/git-cao-zuo/</id>
+        <link href="https://zhaiworld.github.io/post/git-cao-zuo/">
+        </link>
+        <updated>2020-07-07T02:12:10.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="分支">分支</h3>
+<p><strong>显示所有分支</strong><br>
+git branch -a<br>
+<strong>切换当前分支</strong><br>
+git checkout <branch><br>
+<strong>创建新分支，基于当前分支</strong><br>
+git branch &lt;new_branch&gt;<br>
+<strong>删除本地分支</strong><br>
+git branch -d <branch></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[APP Push及测试点]]></title>
         <id>https://zhaiworld.github.io/post/app-push-ji-ce-shi-dian/</id>
