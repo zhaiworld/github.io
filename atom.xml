@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaiworld.github.io/</id>
     <title>zhaiworld</title>
-    <updated>2020-07-21T13:11:38.847Z</updated>
+    <updated>2020-07-21T13:18:48.835Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaiworld.github.io/"/>
     <link rel="self" href="https://zhaiworld.github.io/atom.xml"/>
@@ -119,78 +119,42 @@ X通常在4秒时返回结果。</p>
         <link href="https://zhaiworld.github.io/post/suan-fa/">
         </link>
         <updated>2020-07-21T12:54:20.000Z</updated>
-        <summary type="html"><![CDATA[<p>#给定的字符串<br>
-s=&quot;here is a sample of english text&quot;<br>
-#新建一个字典<br>
-d={}<br>
-#遍历s<br>
-for c in s:<br>
-# 检查字典d中是否含有键为c的项<br>
-if (c in d):<br>
-# 如果有 则键对应的值+1<br>
-d[c]=(d[c]+1)<br>
-else:<br>
-#否则键对应的值为1<br>
-d[c]=1<br>
-print (d)</p>
-<p>def binary_search(lists, key):<br>
-'''判空、仅有1个、排序、low&lt; high、没有查找到'''二分查找法，又叫折半查找，应用于等概分布的有序序列，利用了判定树，平均查找长度 ASL = (log2 n+1) - 1<br>
-if len(lists) == 0:<br>
-return -1<br>
-if len(lists) == 1:<br>
-if key == lists[0]:<br>
-return 0<br>
-else:<br>
-return -1</p>
-<pre><code>new = sorted(lists)
-low, high = 0, len(new) - 1
-while low &lt; high:
-    mid = (high - low) / 2
-    if new[mid] &gt; key:
-        high = mid - 1
-    elif new[mid] &lt; key:
-        low = mid + 1
-    elif new[mid] == key:
-        return mid
-return -1
+        <content type="html"><![CDATA[<pre><code>#给定的字符串
+s=&quot;here is a sample of english text&quot;
+#新建一个字典
+d={}
+#遍历s
+for c in s:
+    # 检查字典d中是否含有键为c的项
+    if (c in d):
+        # 如果有 则键对应的值+1
+        d[c]=(d[c]+1)
+    else:
+        #否则键对应的值为1
+        d[c]=1
+print (d)
 </code></pre>
-]]></summary>
-        <content type="html"><![CDATA[<p>#给定的字符串<br>
-s=&quot;here is a sample of english text&quot;<br>
-#新建一个字典<br>
-d={}<br>
-#遍历s<br>
-for c in s:<br>
-# 检查字典d中是否含有键为c的项<br>
-if (c in d):<br>
-# 如果有 则键对应的值+1<br>
-d[c]=(d[c]+1)<br>
-else:<br>
-#否则键对应的值为1<br>
-d[c]=1<br>
-print (d)</p>
-<p>def binary_search(lists, key):<br>
-'''判空、仅有1个、排序、low&lt; high、没有查找到'''二分查找法，又叫折半查找，应用于等概分布的有序序列，利用了判定树，平均查找长度 ASL = (log2 n+1) - 1<br>
-if len(lists) == 0:<br>
-return -1<br>
-if len(lists) == 1:<br>
-if key == lists[0]:<br>
-return 0<br>
-else:<br>
-return -1</p>
-<pre><code>new = sorted(lists)
-low, high = 0, len(new) - 1
-while low &lt; high:
-    mid = (high - low) / 2
-    if new[mid] &gt; key:
-        high = mid - 1
-    elif new[mid] &lt; key:
-        low = mid + 1
-    elif new[mid] == key:
-        return mid
-return -1
+<pre><code>def binary_search(lists, key):
+    '''判空、仅有1个、排序、low&lt; high、没有查找到'''二分查找法，又叫折半查找，应用于等概分布的有序序列，利用了判定树，平均查找长度 ASL = (log2 n+1) - 1
+    if len(lists) == 0:
+        return -1
+    if len(lists) == 1:
+        if key == lists[0]:
+            return 0
+        else:
+            return -1
+    new = sorted(lists)
+    low, high = 0, len(new) - 1
+    while low &lt; high:
+        mid = (high - low) / 2
+        if new[mid] &gt; key:
+            high = mid - 1
+        elif new[mid] &lt; key:
+            low = mid + 1
+        elif new[mid] == key:
+            return mid
+    return -1
 </code></pre>
-<!-- more -->
 ]]></content>
     </entry>
     <entry>
