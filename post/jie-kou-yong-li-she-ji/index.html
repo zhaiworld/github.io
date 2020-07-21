@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Liunx | zhaiworld</title>
+<title>接口用例设计 | zhaiworld</title>
 <link rel="shortcut icon" href="https://zhaiworld.github.io//favicon.ico?v=1595336990886">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://zhaiworld.github.io//styles/main.css">
@@ -87,60 +87,74 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Liunx
+                    接口用例设计
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2018-12-12 ·
+                        · 2020-07-21 ·
                     </time>
-                    
-                        <a href="https://zhaiworld.github.io/tag/iZbG2SoPM/" class="post-tags">
-                            # liunx
-                        </a>
                     
                 </div>
                 <div class="post-content">
-                    <h3 id="简介讲解编辑神器vi">简介：讲解编辑神器vi</h3>
-<h4 id="vi的基本概念三种模式">vi的基本概念:（三种模式）</h4>
+                    <h2 id="do-its-测试法">DO ITS 测试法</h2>
+<p>讲出一个产品的某个功能点，如果快速设计出测试用例？下面总结一个方法：</p>
 <ul>
-<li>命令模式</li>
-<li>插入模式</li>
-<li>底行模式</li>
+<li>Data(数据)<br>
+针对整个产品使用过程中输入与输出的数据进行用例设计。</li>
+<li>Operation(操作)<br>
+在产品经理、各类用户甚至老板的角度上去思考产品的操作流程和使用场景。</li>
+<li>Interface(接口)<br>
+这个接口是广泛意义上的，不仅是程序接口，还包括用户界面、交互。这里要考虑的就是用户与服务、服务与服务之间的交互。</li>
+<li>Time(时间)<br>
+主要是交互响应、接口请求响应这类的。会涉及到前端缓存、Redis应用、异常处理、超时机制等技术。</li>
+<li>Structure(结构)<br>
+要了解服务架构，表示层、业务层和数据层的划分等。针对具体的被测服务，要了解到它的服务依赖、功能模块、数据库设计。</li>
 </ul>
+<h3 id="接口测试">接口测试</h3>
+<h4 id="11-概述">1.1 概述</h4>
+<p>接口：主要是子模块或者子系统间交互并相互作用的部分。</p>
+<p>这里说的接口是广义的，客户端与后台服务间的协议；插件间通信的接口；模块间的接口；再小到一个类提供的方法；都可以理解为接口。</p>
+<p>接口测试：是指针对模块或系统间接口进行的测试。</p>
+<h4 id="12-典型问题">1.2 典型问题</h4>
+<p>（1）传入参数处理不当，导致程序异常；</p>
+<p>（2）类型溢出，导致数据读出和写入不一致；</p>
+<p>（3）因对象权限未进行校验，可以访问其他用户敏感信息；</p>
+<p>（4）状态处理不当，导致逻辑出现错乱；</p>
+<p>（5）逻辑校验不完善，可利用漏洞获取非正当利益等。</p>
+<h4 id="13接口测试用例设计">1.3.接口测试用例设计</h4>
+<p>接口测试的用例设计，主要从以下几个方面考虑：</p>
+<p>1）针对输入，可按照参数类型进行设计；</p>
+<p>不同参数类型不同的用例设计。</p>
+<p>2）针对接口处理，可按照逻辑进行用例设计；</p>
+<p>主要是根据后台逻辑来设计用例。每个参数代表什么含义，调了后端的什么服务什么接口，有没有依赖其它服务等等。</p>
 <blockquote>
-<p>进入插入模式：按住键盘的 i 或者 o 或者 a<br>
-进入命令模式：按住键盘的左上角esc键<br>
-进入底行模式：前提是得在命令模式，输入 ： 进入</p>
+<p>案例1：信贷——实名中心。<br>
+信贷侧调用实名中心接口上传身份证照片，上传成功后立即查询实名中心校验结果。实名中心做两件事：一是校验身份证是否有效合法； 二是存储身份证图像信息。信贷查询接口对返回结果做了强校验（实名成功&amp;身份证图片地址不为空）。通常情况下，实名中心都能成功返回。但是图像存储需要时间，在成功存储前信贷就查询结果，就会造成实名失败的问题。但实际上实名中心是会成功的。<br>
+这个问题是在FDS存储异常的情况下发现的。后来在线上查询失败日志，也是存在很多这种情况的。所以，需要优化。</p>
 </blockquote>
-<h5 id="在命令模式中的操作">在命令模式中的操作</h5>
-<p>$ ——&gt;移动到这一行的行尾<br>
-gg ——&gt;移动到文档第一行行首<br>
-G ——&gt;移动到文档最后一行行首<br>
-x ——&gt;删除内容，删除一个字符<br>
-dd ——&gt;删除游标所在的那一整行<br>
-u ——&gt;复原原来的操作<br>
-v ——&gt;选中范围按y即复制<br>
-p ——&gt;粘贴</p>
-<h5 id="在底行模式中的操作">在底行模式中的操作</h5>
-<p>n ——&gt;n为数字。光标移动到第n 行<br>
-/ ——&gt;寻找内容<br>
-%s/word1/word2/g ——&gt;从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2<br>
-n1,n2s/word1/word2/g ——&gt;n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代 为 word2<br>
-set nu ——&gt;显示行号<br>
-set nonu ——&gt;取消行号<br>
-q! ——&gt;强制离开不保存<br>
-wq ——&gt;离开并保存<br>
-wq! ——&gt;强制离开并保存<br>
-!ls ——&gt;暂时离开</p>
-<h3 id="常用命令">常用命令</h3>
-<p>查找某个文件并删除 ：find -name xxx.log | xargs rm -rf<br>
-cat /proc/cpuinfo： 查看linux系统的CPU型号、类型以及大小<br>
-cat /proc/meminfo查看linux系统内存大小的详细信息，可以查看总内存，剩余内存、可使用内存等信息</p>
+<p>3）针对输出，可根据结果进行分析设计。</p>
+<p>返回结果有哪些值是影响后续逻辑的，所有的状态是否都有相应的前端处理。</p>
+<blockquote>
+<p>案例2：信贷-第三方扫脸。<br>
+与上面的案例十分相似，前端扫脸后信贷获取到扫脸分数，分数及格则成功。实际上，扫脸接口返回值中还有一项“扫脸图像”，这个根据业务方需要进行校验。信贷后续是会使用到这个图像信息的，所以应该强校验。<br>
+这个问题是在后续业务获取图像信息时获取不到暴露出来的。</p>
+</blockquote>
+<blockquote>
+<p>案例3：账务的A服务调用B服务，而B又去调用外部X服务，其中，A对B设置的超时时间是3秒，而B对X设置的超时时间是5秒。<br>
+X通常在4秒时返回结果。</p>
+</blockquote>
 
                 </div>
             </article>
         </div>
 
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://zhaiworld.github.io/post/ru-he-que-ren-ge-ren-zheng-xin/" class="post-title gt-a-link">
+                    如何确认个人征信
+                </a>
+            </div>
         
 
         

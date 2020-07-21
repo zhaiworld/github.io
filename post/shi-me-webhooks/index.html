@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Liunx | zhaiworld</title>
+<title>什么webhooks | zhaiworld</title>
 <link rel="shortcut icon" href="https://zhaiworld.github.io//favicon.ico?v=1595336990886">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://zhaiworld.github.io//styles/main.css">
@@ -87,60 +87,33 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Liunx
+                    什么webhooks
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2018-12-12 ·
+                        · 2020-07-21 ·
                     </time>
-                    
-                        <a href="https://zhaiworld.github.io/tag/iZbG2SoPM/" class="post-tags">
-                            # liunx
-                        </a>
                     
                 </div>
                 <div class="post-content">
-                    <h3 id="简介讲解编辑神器vi">简介：讲解编辑神器vi</h3>
-<h4 id="vi的基本概念三种模式">vi的基本概念:（三种模式）</h4>
-<ul>
-<li>命令模式</li>
-<li>插入模式</li>
-<li>底行模式</li>
-</ul>
-<blockquote>
-<p>进入插入模式：按住键盘的 i 或者 o 或者 a<br>
-进入命令模式：按住键盘的左上角esc键<br>
-进入底行模式：前提是得在命令模式，输入 ： 进入</p>
-</blockquote>
-<h5 id="在命令模式中的操作">在命令模式中的操作</h5>
-<p>$ ——&gt;移动到这一行的行尾<br>
-gg ——&gt;移动到文档第一行行首<br>
-G ——&gt;移动到文档最后一行行首<br>
-x ——&gt;删除内容，删除一个字符<br>
-dd ——&gt;删除游标所在的那一整行<br>
-u ——&gt;复原原来的操作<br>
-v ——&gt;选中范围按y即复制<br>
-p ——&gt;粘贴</p>
-<h5 id="在底行模式中的操作">在底行模式中的操作</h5>
-<p>n ——&gt;n为数字。光标移动到第n 行<br>
-/ ——&gt;寻找内容<br>
-%s/word1/word2/g ——&gt;从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2<br>
-n1,n2s/word1/word2/g ——&gt;n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代 为 word2<br>
-set nu ——&gt;显示行号<br>
-set nonu ——&gt;取消行号<br>
-q! ——&gt;强制离开不保存<br>
-wq ——&gt;离开并保存<br>
-wq! ——&gt;强制离开并保存<br>
-!ls ——&gt;暂时离开</p>
-<h3 id="常用命令">常用命令</h3>
-<p>查找某个文件并删除 ：find -name xxx.log | xargs rm -rf<br>
-cat /proc/cpuinfo： 查看linux系统的CPU型号、类型以及大小<br>
-cat /proc/meminfo查看linux系统内存大小的详细信息，可以查看总内存，剩余内存、可使用内存等信息</p>
+                    <p>webhooks是一个api概念，是微服务api的使用范式之一，也被成为反向api，即：前端不主动发送请求，完全由后端推送。 举个常用例子，比如你的好友发了一条朋友圈，后端将这条消息推送给所有其他好友的客户端，就是 Webhooks 的典型场景。<br>
+　　简单来说，WebHook就是一个接收HTTP POST（或GET，PUT，DELETE）的URL。一个实现了WebHook的API提供商就是在当事件发生的时候会向这个配置好的URL发送一条信息。与请求-响应式不同，使用WebHooks，你可以实时接受到变化。<br>
+　　这又是一种对客户机-服务器模式的逆转，在传统方法中，客户端从服务器请求数据，然后服务器提供给客户端数据（客户端是在拉数据）。在Webhook范式下，服务器更新所需提供的资源，然后自动将其作为更新发送到客户端（服务器是在推数据），客户端不是请求者，而是被动接收方。这种控制关系的反转可以用来促进许多原本需要在远程服务器上进行更复杂的请求和不断的轮询的通信请求。通过简单地接收资源而不是直接发送请求，我们可以更新远程代码库，轻松地分配资源，甚至将其集成到现有系统中来根据API的需要来更新端点和相关数据，唯一的缺点是初始建立困难。</p>
+<p>主要用途：更新客户端，在资源新建或者更新时提供更新的、指定的数据。</p>
+<p>常见场景：对于第三方平台验权、登陆等 没有前端界面做中转的场景，或者强安全要求的支付场景等，适合用 Webhooks 做数据主动推送。说白了就是在前端无从参与，或者因为前端安全问题不适合参与时，就是 Webhooks 的场景。很显然 Webhooks 也不是 Http 的替代品，不过的确是一种新的前后端交互方式。<br>
+　　如果客户端要长期监听某个任务的状态，按照正常的api调用的方式去做，那么必须不停得轮训服务器来获取当前状态；使用webhook则无需轮训，通过API 可以确定是否发生了更改，如果更改了只需要等待服务器推送信息过来，然后客户端更新就可以。git webhook其实也是这方面的应用。</p>
 
                 </div>
             </article>
         </div>
 
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://zhaiworld.github.io/post/suan-fa/" class="post-title gt-a-link">
+                    算法
+                </a>
+            </div>
         
 
         

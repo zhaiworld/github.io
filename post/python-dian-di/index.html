@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Liunx | zhaiworld</title>
+<title>Python 点滴 | zhaiworld</title>
 <link rel="shortcut icon" href="https://zhaiworld.github.io//favicon.ico?v=1595336990886">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://zhaiworld.github.io//styles/main.css">
@@ -87,60 +87,42 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Liunx
+                    Python 点滴
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2018-12-12 ·
+                        · 2020-07-21 ·
                     </time>
-                    
-                        <a href="https://zhaiworld.github.io/tag/iZbG2SoPM/" class="post-tags">
-                            # liunx
-                        </a>
                     
                 </div>
                 <div class="post-content">
-                    <h3 id="简介讲解编辑神器vi">简介：讲解编辑神器vi</h3>
-<h4 id="vi的基本概念三种模式">vi的基本概念:（三种模式）</h4>
-<ul>
-<li>命令模式</li>
-<li>插入模式</li>
-<li>底行模式</li>
-</ul>
-<blockquote>
-<p>进入插入模式：按住键盘的 i 或者 o 或者 a<br>
-进入命令模式：按住键盘的左上角esc键<br>
-进入底行模式：前提是得在命令模式，输入 ： 进入</p>
-</blockquote>
-<h5 id="在命令模式中的操作">在命令模式中的操作</h5>
-<p>$ ——&gt;移动到这一行的行尾<br>
-gg ——&gt;移动到文档第一行行首<br>
-G ——&gt;移动到文档最后一行行首<br>
-x ——&gt;删除内容，删除一个字符<br>
-dd ——&gt;删除游标所在的那一整行<br>
-u ——&gt;复原原来的操作<br>
-v ——&gt;选中范围按y即复制<br>
-p ——&gt;粘贴</p>
-<h5 id="在底行模式中的操作">在底行模式中的操作</h5>
-<p>n ——&gt;n为数字。光标移动到第n 行<br>
-/ ——&gt;寻找内容<br>
-%s/word1/word2/g ——&gt;从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2<br>
-n1,n2s/word1/word2/g ——&gt;n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代 为 word2<br>
-set nu ——&gt;显示行号<br>
-set nonu ——&gt;取消行号<br>
-q! ——&gt;强制离开不保存<br>
-wq ——&gt;离开并保存<br>
-wq! ——&gt;强制离开并保存<br>
-!ls ——&gt;暂时离开</p>
-<h3 id="常用命令">常用命令</h3>
-<p>查找某个文件并删除 ：find -name xxx.log | xargs rm -rf<br>
-cat /proc/cpuinfo： 查看linux系统的CPU型号、类型以及大小<br>
-cat /proc/meminfo查看linux系统内存大小的详细信息，可以查看总内存，剩余内存、可使用内存等信息</p>
+                    <p><strong>init</strong>.py可以为空，只要它存在，就表明此目录应被作为一个package处理。<br>
+__all__用来限制具体哪些module是可以被导入的。<br>
+<strong>version</strong>.py里面定义框架的名称、描述、版本号等信息<br>
+考虑到py2和py3在import上有差异性，可以通过compat.py来解决此类问题。借鉴requests的处理方法。</p>
+<p>This assumes ASCII unless told otherwise.<br>
+魔法方法：https://pycoders-weekly-chinese.readthedocs.io/en/latest/issue6/a-guide-to-pythons-magic-methods.html</p>
+<p>Python中对象包含的三个基本要素，分别是：id(身份标识)、type(数据类型)和value(值)<br>
+== 是Python 比较操作符，用来比较判断两个对象的值是否相等<br>
+is 是同一性运算符，用来判断is是否相同</p>
+<p><strong>合并两个字典</strong><br>
+dict_1 = {'apple': 9, 'banana': 6}<br>
+dict_2 = {'banana': 4, 'orange': 8}<br>
+combined_dict = {**dict_1, **dict_2}<br>
+print(combined_dict)</p>
+<p>1.元祖不可修改。2.元祖不可删除</p>
 
                 </div>
             </article>
         </div>
 
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://zhaiworld.github.io/post/jie-jue-refused-to-display-http-in-a-frame-wen-ti/" class="post-title gt-a-link">
+                    解决Refused to display &#39;http://*./*&#39; in a frame问题
+                </a>
+            </div>
         
 
         
